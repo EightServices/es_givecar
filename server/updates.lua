@@ -1,7 +1,7 @@
 CreateThread(function()
     local url = "https://raw.githubusercontent.com/EightServices/es_givecar/master/version.txt"
 
-    local function getAnticombatlogVersion()
+    local function getGivecarVersion()
         local file = io.open(GetResourcePath(GetCurrentResourceName()).."/version.txt", "r")
         if file then
             local local_version = file:read("*all")
@@ -13,7 +13,7 @@ CreateThread(function()
         end
     end
 
-    local local_version = getAnticombatlogVersion()
+    local local_version = getGivecarVersion()
 
     if local_version then
         PerformHttpRequest(url, function(statusCode, responseText, headers)
